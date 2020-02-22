@@ -5,9 +5,12 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "rang_mission")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-class RangMission extends Parametre {
+@NoArgsConstructor
+public class RangMission extends Parametre {
     
 }
