@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name = "mission")
 @Data
 @NoArgsConstructor
-class Mission {
+public class Mission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,4 +37,7 @@ class Mission {
 
     @ManyToMany
     private List<Ninja> ninjas;
+
+    @ManyToOne
+    private EtatMission etatMission;
 }
