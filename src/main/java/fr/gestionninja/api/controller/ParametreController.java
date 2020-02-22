@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.gestionninja.api.data.Affinitee;
+import fr.gestionninja.api.data.EtatMission;
 import fr.gestionninja.api.data.RangMission;
 import fr.gestionninja.api.data.RangNinja;
 import fr.gestionninja.api.service.ParametreService;
@@ -52,5 +53,15 @@ class ParametreController {
     @PostMapping(path = "affinitee")
     public int addAffinitees(@RequestBody List<Affinitee> affinitees) {
         return parametreService.addAffinitees(affinitees);
+    }
+
+    @GetMapping(path = "etatmission")
+    public List<EtatMission> getEtatsMission() {
+        return parametreService.getEtatsMission();
+    }
+
+    @PostMapping(path = "etatmission")
+    public int addEtatsMission(@RequestBody List<EtatMission> etatsMission) {
+        return parametreService.addEtatsMission(etatsMission);
     }
 }

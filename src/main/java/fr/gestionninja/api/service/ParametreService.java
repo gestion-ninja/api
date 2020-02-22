@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.gestionninja.api.data.Affinitee;
+import fr.gestionninja.api.data.EtatMission;
 import fr.gestionninja.api.data.RangMission;
 import fr.gestionninja.api.data.RangNinja;
 import fr.gestionninja.api.repository.AffiniteRepository;
+import fr.gestionninja.api.repository.EtatMissionRepository;
 import fr.gestionninja.api.repository.RangMissionRepository;
 import fr.gestionninja.api.repository.RangNinjaRepository;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,7 @@ public class ParametreService {
     @Autowired private RangNinjaRepository rangNinjaRepository;
     @Autowired private RangMissionRepository rangMissionRepository;
     @Autowired private AffiniteRepository affiniteRepository;
+    @Autowired private EtatMissionRepository etatMissionRepository;
 
     public List<RangNinja> getRangsNinjas() {
         return rangNinjaRepository.findAll();
@@ -44,5 +47,13 @@ public class ParametreService {
     public int addAffinitees(List<Affinitee> affinitees) {
         return affiniteRepository.saveAll(affinitees).size();
     }
+
+	public List<EtatMission> getEtatsMission() {
+		return etatMissionRepository.findAll();
+	}
+
+	public int addEtatsMission(List<EtatMission> etatsMission) {
+		return etatMissionRepository.saveAll(etatsMission).size();
+	}
     
 }

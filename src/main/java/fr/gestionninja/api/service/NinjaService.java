@@ -45,6 +45,7 @@ public class NinjaService {
             ninja.setPrenom(_ninja.getPrenom());
             ninja.setRang(_ninja.getRang());
             ninja.setStatistiques(_ninja.getStatistiques());
+            ninja.setMissions(_ninja.getMissions());
     
             return ninjaRepository.save(ninja);
         }
