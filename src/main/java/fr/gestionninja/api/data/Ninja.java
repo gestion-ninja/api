@@ -41,4 +41,7 @@ public class Ninja {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Statistiques statistiques;
 
+    @OneToMany
+    private List<Technique> techniques;
+
 }
